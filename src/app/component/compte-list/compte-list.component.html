@@ -1,0 +1,23 @@
+<div class="card ">
+  <div class="card-header">Liste des comptes</div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+        <th>ID</th>
+        <th>Solde</th>
+        <th>Options</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let compte of comptes">
+          <td>{{compte._id}}</td>
+          <td>{{compte.solde}}</td>
+          <td>
+            <a routerLink="/compte/{{compte._id}}" class="btn btn-outline-info">Detail</a>
+            <a routerLink="/compte/{{compte._id}}/edit" class="btn btn-outline-success">Modifier</a>
+            <a (click)="deleteCompte(compte._id)" class="btn btn-outline-danger">Supprimer</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
